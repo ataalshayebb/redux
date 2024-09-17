@@ -1,9 +1,8 @@
-
-
 import { configureStore } from '@reduxjs/toolkit';
-import cartReducer from './cartSlice';
+import cartReducer from './cartslice';
+import authReducer from './authslice';
+import productsReducer from './productsslice';
 
-// Middleware to save cart to local storage
 const localStorageMiddleware = ({ getState }) => {
   return next => action => {
     const result = next(action);
@@ -15,6 +14,8 @@ const localStorageMiddleware = ({ getState }) => {
 export const store = configureStore({
   reducer: {
     cart: cartReducer,
+    auth: authReducer,
+    
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(localStorageMiddleware),

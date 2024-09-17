@@ -1,8 +1,8 @@
-// src/cartSlice.js
+
 
 import { createSlice } from '@reduxjs/toolkit';
 
-// Load cart from local storage
+
 const loadCartFromStorage = () => {
   try {
     const serializedCart = localStorage.getItem('cart');
